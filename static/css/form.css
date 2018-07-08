@@ -1,0 +1,18 @@
+textarea:not(textarea),
+textarea.form-control:not(textarea),
+input.form-control:not(textarea),
+input[type="text"]:not(textarea),
+input[type="password"]:not(textarea),
+input[type="email"]:not(textarea),
+input[type="number"]:not(textarea),
+[type="text"].form-control:not(textarea),
+[type="password"].form-control:not(textarea),
+[type="email"].form-control:not(textarea),
+[type="tel"].form-control:not(textarea),
+[contenteditable].form-control:not(textarea) {
+  height: 1.5rem;
+}
+
+.block {
+  display: inline;
+}
