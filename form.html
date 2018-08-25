@@ -57,7 +57,7 @@
 
     <!-- Form -->
     <div class="container mt-5">
-        <form>
+        <form action="application-submission.php" method="POST">
             <h2 class="text-center">Apply for Leave</h2>
             <div class="row mt-5">
                 <div class="col-md-6">
@@ -104,7 +104,7 @@
             <div class="row" style="padding-top: 10px">
 
 
-                <span class="" style="padding-top: 15px; padding-right: 20px">Period of Leave</span>
+                <span class="" style="padding-top: 15px; padding-left: 15px">Period of Leave</span>
                 <div class="col-md-5" style="padding-right: 20px">
                     <div class="form-group">
                         <div class='input-group date' id='datepicker' data-date-format="dd-mm-yyyy">
@@ -130,7 +130,7 @@
             </div>
             <!--  col-md-6   -->
 
-            <div class="row">
+            <div class="row" style="padding-top: 30px">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Nature of Leave</label>
@@ -201,7 +201,11 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="company">Attachments (if any)</label>
-                        <input type="text" class="form-control" placeholder="" id="company">
+                        <div class="file-field input-field">
+                          <div class="btn">
+                            <input type="file" name="file">
+                          </div>
+                        </div>
                     </div>
 
 
