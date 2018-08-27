@@ -39,21 +39,6 @@
 		                	$apps[] = $app;
 		                }
 		                echo json_encode($apps);
-		                /**Jquery to use in fronthend**/
-		                /*
-							$(document).ready(function(){
-							    $.ajax({
-							        url: 'admin-dashboard-fetch.php',
-							        type: 'post',
-							        data: {method: 'getApps'},
-							        success: function(data) {
-							        	// check for no application
-							        	// if data == 'No applications currently' else //logic ends
-							            // showdirectly
-							        }
-						    	})
-							});
-		                */
 		    	    }
 
 		        } catch(PDOException $e){
