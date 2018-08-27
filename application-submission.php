@@ -5,7 +5,7 @@
     require 'db.php' ;
   
 
-    if(!isset($_POST['submit'])) {
+    if(!empty($_POST['submit'])) {
         echo '<script language="javascript"> alert("all fields required") </script>'; 
         header("Refresh: 1; url=index.php");
     }
@@ -29,52 +29,57 @@
     	#######################
     	##### File Upload #####
     	#######################
+    	if (!empty($_FILES['file'])) {
+    		$file = $_FILES['file'];
+			print_r($file);
+			//die($file);
+			$fileName = $file['name'];
+			$fileType = $file['type'];
+			$fileTmpName = $file['tmp_name'];
+			$fileError = $file['error'];
+			$fileSize = $file['size'];
 
-    	$file = $_FILES['file'];
-		print_r($file);
-		# die("file");
-		$fileName = $file['name'];
-		$fileType = $file['type'];
-		$fileTmpName = $file['tmp_name'];
-		$fileError = $file['error'];
-		$fileSize = $file['size'];
+			$fileExt = explode('.', $fileName);
+			
 
-		$fileExt = explode('.', $fileName);
-		
+			$fileActualExt = strtolower($fileExt[1]);
+			
 
-		$fileActualExt = strtolower($fileExt[1]);
-		
+			$allowed = array('jpg','jpeg','png','gif','bmp','img');
 
-		$allowed = array('jpg','jpeg','png','gif','bmp','img');
-
-		if(in_array($fileActualExt, $allowed)) {
-			if($fileError === 0) {
-				if($fileSize<100000000) {
-					$fileNewName = uniqid('',true).'.'.$fileActualExt;
-					$uploadedImageName = $fileNewName;
-					$fileDestination = 'http://localhost/Leave-Application-Portal/uploads'.$fileNewName; # change location afterwards
-					$urlto = 'http://localhost/Leave-Application-Portal/uploads/'.$fileNewName; # change location afterwards
-					move_uploaded_file($fileTmpName, $fileDestination);
-					# header("Location: ./index.php?fileUpload==success");
-				} else {
-					echo '<script language="javascript"> alert("File is Too Big") </script>'; 
-        			header("Refresh: 1; url=index.php");
-				}	
-				} 	else {
-					echo '<script language="javascript"> alert("There Was An Error in Uploading File") </script>'; 
-        			header("Refresh: 1; url=index.php");
-				}
-				}	else {
-					echo '<script language="javascript"> alert("Format Not Supported") </script>'; 
-        			header("Refresh: 1; url=index.php");
-				}
+			if(in_array($fileActualExt, $allowed)) {
+				if($fileError === 0) {
+					if($fileSize<100000000) {
+						$fileNewName = uniqid('',true).'.'.$fileActualExt;
+						$uploadedImageName = $fileNewName;
+						$fileDestination = '/opt/lampp/htdocs/Leave-Application-Portal/uploads/'.$fileNewName; # change location afterwards
+						$urlto = '/opt/lampp/htdocs/Leave-Application-Portal/uploads/'.$fileNewName; # change location afterwards
+						move_uploaded_file($fileTmpName, $fileDestination);
+						# header("Location: ./index.php?fileUpload==success");
+					} else {
+						echo '<script language="javascript"> alert("File is Too Big") </script>'; 
+	        			header("Refresh: 1; url=index.php");
+					}	
+					} 	else {
+						echo '<script language="javascript"> alert("There Was An Error in Uploading File") </script>'; 
+	        			header("Refresh: 1; url=index.php");
+					}
+					}	else {
+						echo '<script language="javascript"> alert("Format Not Supported") </script>'; 
+	        			header("Refresh: 1; url=index.php");
+					}
+    	} else {
+    		echo '<script language="javascript"> alert("Tryf !") </script>' ; 
+    	}
+    	
 
 				# add all data to database
-				$sql = $connection->prepare("INSERT INTO application (studentName,rollNumber,branch,semester,startDate,natureOfLeave,purpose,classScheduledOnLeave,address,mobile,email,uploadedImageName) VALUES (:studentName,:rollNumber,:email,:branch,:semester,:startDate,:natureOfLeave,:purpose,:classScheduledOnLeave,:address,:mobile,:email,:uploadedImageName)");
-                $cmd = $sql->execute(["studentName" => $studentName,"rollNumber" => $rollNumber,"branch" => $branch,"semester" => $semester,"startDate" => $startDate,"natureOfLeave" => $natureOfLeave,"purpose" => $purpose,"classScheduledOnLeave" => $classScheduledOnLeave,"address" => $address,"mobile" => $mobile,"email" => $email,"uploadedImageName" => $uploadedImageName]);
+				$sql = $connection->prepare("INSERT INTO applications (studentName,rollNumber,branch,semester,startDate,endDate,natureOfLeave,purpose,classScheduledOnLeave,address,mobile,email,uploadedImageName) VALUES (:studentName,:rollNumber,:branch,:semester,:startDate,:endDate,:natureOfLeave,:purpose,:classScheduledOnLeave,:address,:mobile,:email,:uploadedImageName)");
+
+                $cmd = $sql->execute(["studentName" => $studentName,"rollNumber" => $rollNumber,"branch" => $branch,"semester" => $semester,"startDate" => $startDate,"endDate"=>$endDate,"natureOfLeave" => $natureOfLeave,"purpose" => $purpose,"classScheduledOnLeave" => $classScheduledOnLeave,"address" => $address,"mobile" => $mobile,"email" => $email,"uploadedImageName" => $uploadedImageName]);
 
                 if($cmd){
-                      echo '<script language="javascript"> alert("Succesfully Registered , You can login now") </script>' ; 
+                      echo '<script language="javascript"> alert("Succesfully submmited") </script>' ; 
                     header("Refresh: 1; url=index.php"); 
                 }
                   

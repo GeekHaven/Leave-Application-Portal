@@ -2,22 +2,27 @@
      
     session_start();
 
+    //testing purpose
+    $_SESSION['branch'] = 'ece';
+    //testing
+
     require 'db.php' ;
 
     //logic for checking admin
     if(isset($_POST['method']) === true && empty($_POST['method']) === false) {
+    	$method = htmlentities($_POST['method']);
     	if($method === 'getApps') {
-			if(/*!admin*/) {
-
+			if(/*!admin*/false) {//testing
+				
 			} else {
 				try {
 		        	
 		        
 		        	$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		        	$stmt = $connection->prepare('SELECT * FROM application WHERE branch = :branch');
-		    		$stmt->execute(['email' => $_SESSION['branch']]);
-		    		$applications = $stmt->fetch(PDO::FETCH_ASSOC);
+		        	$stmt = $connection->prepare('SELECT * FROM applications WHERE branch = :branch');
+		    		$stmt->execute(['branch' => $_SESSION['branch']]);
+		    		$applications = $stmt->fetchall(PDO::FETCH_ASSOC);
 
 		    		if($applications == Null){
 		    			echo '<script language="javascript">alert("No applications currently")</script>';  
@@ -51,7 +56,12 @@
 		                */
 		    	    }
 
-		        }
+		        } catch(PDOException $e){
+	        		echo '<script language="javascript">';
+	          		echo '$sql . "<br>" . $e->getMessage();';
+	          		echo '</script>';   
+	          		header("Refresh: 1; url=index.php");
+        	}
 			}
 		}
 	}
