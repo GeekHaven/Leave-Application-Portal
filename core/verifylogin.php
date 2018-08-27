@@ -39,7 +39,7 @@
                 $_SESSION['user'] = $email;
                 $_SESSION['id'] = $id;
                 $_SESSION['isactive'] = true;
-    	      	header("location: dashboard.php"); 
+    	      	header("location: ../dashboard.php"); 
     	    }
 
         }

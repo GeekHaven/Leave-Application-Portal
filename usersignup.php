@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="static/css/signup.css">
 <body>
 
-<form action="signupcheck.php" method="post" style="border:1px solid #ccc">
+<form action="./core/signupcheck.php" method="post" style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>

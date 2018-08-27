@@ -1,11 +1,16 @@
 <?php 
-
+    
+   //work to do
+    /*
+        one email signup check for same email if used again
+        simple password error 
+    */
    require 'db.php' ;
 
  
     if(!isset($_POST['submit'])){
         echo '<script language="javascript"> alert("Access Denied") </script>'; 
-        header("Refresh: 1; url=usersignup.php");
+        header("Refresh: 1; url=../usersignup.php");
     }
 
     else{
@@ -18,7 +23,7 @@
         }
         else{
                     echo '<script language="javascript">alert("Try Again!")</script>';
-                    header("Refresh: 1; url=usersignup.php");
+                    header("Refresh: 1; url=../usersignup.php");
                 }
 
       
@@ -35,7 +40,7 @@
 
             if($user != Null){
                 echo '<script language="javascript"> alert("Email Already Exists") </script>' ;   
-                header("Refresh: 1; url=usersignup.php"); 
+                header("Refresh: 1; url=../usersignup.php"); 
             }
 
             else{
@@ -44,12 +49,12 @@
 
                 if($cmd){
                       echo '<script language="javascript"> alert("Succesfully Registered , You can login now") </script>' ; 
-                    header("Refresh: 1; url=index.php"); 
+                    header("Refresh: 1; url=../index.php"); 
                 }
                   
                 else{
                     echo '<script language="javascript"> alert("Try Again !") </script>' ;     
-                    header("Refresh: 1; url=usersignup.php");
+                    header("Refresh: 1; url=../usersignup.php");
                 }
                 
             }
@@ -60,7 +65,7 @@
                 echo '<script language="javascript">';
                 echo '$sql . "<br>" . $e->getMessage();';
                 echo '</script>';   
-                header("Refresh: 1; url=usersignup.php");
+                header("Refresh: 1; url=../usersignup.php");
             }
 
         $connection = null;

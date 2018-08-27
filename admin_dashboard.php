@@ -11,7 +11,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 		    $.ajax({
-		        url: 'admin-dashboard-fetch.php',
+		        url: './core/admin-dashboard-fetch.php',
 		        type: 'post',
 		        data: {method: 'getApps'},
 		        success: function(data) {
