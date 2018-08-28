@@ -3,7 +3,7 @@
 
 <h2>Login Form</h2>
 
-<form action="verifylogin.php" method="post">
+<form action="./core/verifylogin.php" method="post">
   <div class="imgcontainer">
     <img src="index.png" alt="Avatar" class="avatar" height="200" width="100">
   </div>
