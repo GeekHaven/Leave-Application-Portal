@@ -7,7 +7,7 @@
 
     if(!empty($_POST['submit'])) {
         echo '<script language="javascript"> alert("all fields required") </script>'; 
-        header("Refresh: 1; url=index.php");
+        header("Refresh: 1; url=../index.php");
     }
 
     else {
@@ -25,6 +25,29 @@
     	$mobile = htmlentities($_POST['mobile']);
     	$email = htmlentities($_POST['email']);
     	$uploadedImageName =   "";
+
+    	# backend check for empty fields
+    	if(empty(trim($studentName)) || empty(trim($rollNumber)) || empty(trim($branch)) || empty(trim($semester)) || empty(trim($startDate)) || empty(trim($endDate)) || empty(trim($natureOfLeave)) || empty(trim($purpose)) || empty(trim($classScheduledOnLeave)) || empty(trim($address)) || empty(trim($mobile)) || empty(trim($email))) {
+    		echo '<script language="javascript"> alert("unfilled fields") </script>'; 
+        	header("Refresh: 1; url=../index.php");
+        	exit();
+    	}
+
+    	# backend check for text => only alphabets can be used in these fields
+		if (!preg_match("/^[a-zA-Z]*$/", $studentName) || !preg_match("/^[a-zA-Z]*$/", $branch) || !preg_match("/^[a-zA-Z]*$/", $natureOfLeave) || !preg_match("/^[a-zA-Z]*$/", $classScheduledOnLeave)) {
+        	echo '<script language="javascript"> alert("invalid fields") </script>'; 
+        	header("Refresh: 1; url=../index.php");
+        	exit();
+		} 
+
+		# backend check for email field
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        	echo '<script language="javascript"> alert("invalid email") </script>'; 
+        	header("Refresh: 1; url=../index.php");
+        	exit();
+        }
+		
+		#more checks
 
     	#######################
     	##### File Upload #####
@@ -80,11 +103,11 @@
 
                 if($cmd){
                       echo '<script language="javascript"> alert("Succesfully submmited") </script>' ; 
-                    header("Refresh: 1; url=index.php"); 
+                    header("Refresh: 1; url=../index.php"); 
                 }
                   
                 else{
                     echo '<script language="javascript"> alert("Try Again !") </script>' ;     
-                    header("Refresh: 1; url=usersignup.php");
+                    header("Refresh: 1; url=../usersignup.php");
                 }
 	   	}

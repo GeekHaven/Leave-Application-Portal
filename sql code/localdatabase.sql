@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Aug 27, 2018 at 05:43 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Host: 127.0.0.1
+-- Generation Time: Sep 03, 2018 at 06:29 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `leave_portal2`
+-- Database: `leaveapp`
 --
 
 -- --------------------------------------------------------
@@ -34,24 +34,28 @@ CREATE TABLE `applications` (
   `rollNumber` varchar(255) NOT NULL,
   `branch` varchar(255) NOT NULL,
   `semester` int(11) NOT NULL,
-  `startDate` date DEFAULT NULL,
-  `endDate` date DEFAULT NULL,
+  `startDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `endDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `natureOfLeave` varchar(255) NOT NULL,
   `purpose` varchar(255) NOT NULL,
   `classScheduledOnLeave` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `mobile` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `uploadedImageName` varchar(255) NOT NULL
+  `uploadedImageName` varchar(255) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `applications`
 --
 
-INSERT INTO `applications` (`id`, `studentName`, `rollNumber`, `branch`, `semester`, `startDate`, `endDate`, `natureOfLeave`, `purpose`, `classScheduledOnLeave`, `address`, `mobile`, `email`, `uploadedImageName`) VALUES
-(1, 'prateek', 'iec2017029', 'ece', 3, '2018-08-26', '2018-08-26', 'mood', 'mood', 'yes', '1111 bh4', 999999999, 'iec2017029@iiita.ac.in', 'cr7'),
-(2, 'asfhgn', 'rfthjyrdgth', 'ece', 0, '0000-00-00', '0000-00-00', 'fhrty6uh', 'ytrhg', 'rytuujhr', 'yjthgjyt', 0, 'ryjh@ghtdgh', '5b836cb74f0468.32620900.jpg');
+INSERT INTO `applications` (`id`, `studentName`, `rollNumber`, `branch`, `semester`, `startDate`, `endDate`, `natureOfLeave`, `purpose`, `classScheduledOnLeave`, `address`, `mobile`, `email`, `uploadedImageName`, `status`) VALUES
+(1, 'prateek', 'iec2017029', 'ece', 3, '2018-08-25 18:30:00', '2018-08-25 18:30:00', 'mood', 'mood', 'yes', '1111 bh4', 999999999, 'iec2017029@iiita.ac.in', 'cr7', 1),
+(2, 'asfhgn', 'rfthjyrdgth', 'ece', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'fhrty6uh', 'ytrhg', 'rytuujhr', 'yjthgjyt', 0, 'ryjh@ghtdgh', '5b836cb74f0468.32620900.jpg', 1),
+(4, 'test', '', '', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '', '', '', 0, '', '', 2),
+(5, 'test', '', 'ece', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '', '', '5378    BH5', 2147483647, 'iec2017029@iiita.ac.in', '', 3),
+(6, 'prateek', 'iec2017029', 'ece', 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'ec', 'fghn', 'fdgnh', '5378    BH5', 2147483647, 'iec2017029@iiita.ac.in', '', 0);
 
 -- --------------------------------------------------------
 
@@ -99,14 +103,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-COMMIT;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
