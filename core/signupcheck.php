@@ -20,6 +20,7 @@
             $Enroll = htmlentities($_POST['Enroll']);
             $Pass = md5(htmlentities($_POST['Password']));
             $Email = htmlentities($_POST['Email']);
+            $PassAgain = md5(htmlentities($_POST['Passwordagain']));
         }
         else{
                     echo '<script language="javascript">alert("Try Again!")</script>';
@@ -40,6 +41,9 @@
 
             if($user != Null){
                 echo '<script language="javascript"> alert("Email Already Exists") </script>' ;   
+                header("Refresh: 1; url=../usersignup.php"); 
+            } else if($PassAgain != $Pass) {
+                echo '<script language="javascript"> alert("password does not match") </script>' ;   
                 header("Refresh: 1; url=../usersignup.php"); 
             }
 

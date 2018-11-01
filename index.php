@@ -9,6 +9,9 @@
   </div>
 
   <div class="container">
+    <label for="enroll"><b>Enrollment Number</b></label>
+    <input type="text" placeholder="Enter Email" name="enroll" required>
+
     <label for="Email"><b>Username</b></label>
     <input type="email" placeholder="Enter Email" name="Email" required>
 
