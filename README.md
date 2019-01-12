@@ -1,10 +1,19 @@
 # Leave-Application-Portal
 Leave application portal for IIIT-A to speed up leave approval process
 
+## Installation
+
+1. install [xampp] (https://www.apachefriends.org/download.html)
+2. Go to xampp/htdocs 
+3. git clone (your repo link)
+4. start localhost server and run the server, also run the sql database
+5. Go to localhost/phpmyadmin and run sqlcode command provided in repository in sql terminal
+6. You are ready to go! just type localhost/{your folder name in /htdocs} in url
+
 ## Requirements
 Basic Git and Github. (Feel free to contact any mentor if you have any issue regarding Git and Github.)
 
-## Installation and Contributing
+## Contributing
 
 1. Fork the project
 2. In gitbash or terminal, use the following commands - 
