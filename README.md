@@ -28,6 +28,12 @@ Basic Git and Github. (Feel free to contact any mentor if you have any issue reg
 ## Claim an issue
 To claim an issue please comment on the issue as @opencodebot claim and the bot will assign you the issue.
 
+## making pr to this project
+
+1. please mention issue number in description while making pr (e.g. #23) and changes made
+2. if you solve only part of an issue mention the part you solved in changes.
+3. Provide the relevant screenshot for easier review.
+
 ## Guidelines
 
 Please help us follow the best practice to make it easy for the reviewer as well as the contributor. We want to focus on the code quality more than on managing pull request ethics.
