@@ -43,7 +43,11 @@
                     <h3><a class="nav-link" href="student_dashboard.php"><- BACK TO Dashboard</a></h3>
                 </li>
             </ul>
-
+            <ul class="navbar-nav">
+                <li class="nav-item float-right">
+                    <h3><a class="nav-link" href="student_dashboard.php"><?php echo $_SESSION['user'] ?></a></h3>
+                </li>
+            </ul>
         </div>
     </nav>
     <!-- End Navbar -->
