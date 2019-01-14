@@ -9,15 +9,16 @@
   </div>
 
   <div class="container">
+    <br>
     <label for="enroll"><b>Enrollment Number</b></label>
     <input type="text" placeholder="Enter Email" name="enroll" required>
-
+     <br>
     <label for="Email"><b>Username</b></label>
     <input type="email" placeholder="Enter Email" name="Email" required>
-
+     <br>
     <label for="Password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="Password" required>
-        
+      <br>  
    <input type="submit" name="submit" value="submit" class="sub">
     <label>
       <h3>Not Registered ?? Click <a href="usersignup.php">Here</a></h3>
