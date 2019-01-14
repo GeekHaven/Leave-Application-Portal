@@ -2,7 +2,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
 
 input[type=email], input[type=password], input[type=text] {
-    width: 50%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: block;
@@ -17,7 +17,7 @@ input[type=email], input[type=password], input[type=text] {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 50%;
+    width: 100%;
 }
 
 button:hover {
@@ -42,8 +42,10 @@ img.avatar {
 
 .container {
     padding: 16px;
-    margin:auto;
-    text-align: center;
+    margin: 0 auto;
+    align-content: center;
+    width: 50%;
+    
 }
 
 span.psw {
