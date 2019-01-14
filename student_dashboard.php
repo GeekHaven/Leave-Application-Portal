@@ -22,6 +22,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style>
 
+		@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+		body {font-family: 'Roboto', sans-serif;}
+
 		.sidenav {
 			height: 100%;
 			width: 250px;
@@ -75,7 +79,7 @@
 		}
 
 		table {
-			font-family: arial, sans-serif;
+			font-family: 'Roboto', sans-serif;
 			border-collapse: collapse;
 			width: 100%;
 		}
