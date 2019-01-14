@@ -7,7 +7,7 @@ input[type=email], input[type=password], input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    display: inline-block;
+    display: block;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
@@ -38,12 +38,16 @@ button:hover {
 }
 
 img.avatar {
-    width: 40%;
+    width: 15%;
     border-radius: 50%;
 }
 
 .container {
     padding: 16px;
+    margin: 0 auto;
+    align-content: center;
+    width: 35%;
+    
 }
 
 span.psw {
