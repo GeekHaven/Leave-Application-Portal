@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {font-family: 'Roboto', sans-serif;}
+
+h1.admin-heading {
+    text-align: center;
+}
 form {border: 3px solid #f1f1f1;}
 
-input[type=email], input[type=password], input[type=text] {
+input[type=email], input[type=password], input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -52,7 +56,6 @@ img.avatar {
 
 span.psw {
     float: right;
-    padding-top: 16px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
