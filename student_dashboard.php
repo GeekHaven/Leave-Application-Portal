@@ -36,7 +36,7 @@
 			background-color: #111;
 			overflow-x: hidden;
 			padding-top: 20px;
-			background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3) ), url("dog.jpg");
+			background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8) );
 			background-size: cover;
 			box-shadow: 0 0 10px #7b7777;
 		}
@@ -45,7 +45,7 @@
 			padding: 6px 8px 6px 16px;
 			text-decoration: none;
 			font-size: 18px;
-			color: #fff!important;
+			color: #796ed4;
 			display: block;
 		}
 
@@ -105,11 +105,26 @@
 			cursor: pointer
 		}
 		
-		.btn.focus, .btn:focus, .btn:hover {
-			color: #333!important;
-			text-decoration: none;
-			background: #fff!important;
-		}
+		button{
+			
+			-webkit-transition-duration: 0.4s; /* Safari */
+			 transition-duration: 0.4s;
+			 background-color:white;
+                        color: black;
+			 border: 2px solid #796ed4;
+			 text-decoration-color: #796ed4;
+			
+            
+                         text-align: center;
+                         text-decoration: none;
+                          display: inline-block;
+			 width: 225px;
+		 }
+	
+		   button:hover {
+			 background-color: #796ed4; /* Green */
+			 color: #796ed4;
+		   }
 	</style>
 </head>
 <body>
@@ -120,8 +135,11 @@
 	<div style="text-align:center;font-size: 24px;color: #fff"><?php echo $_SESSION['enroll'] ?></div>
 	</div>
 	<ul style="padding: 10px; margin-top: 70px">
-		<li class="btn all_apps" style="background: rgba(255, 255, 255, 0.5);border-radius: 0px!important;color: #f3f3f3;outline: none;border-color: #444;border-width: 2px;border-radius: 100px!important;margin-bottom:5px;">APPLICATIONS</li>
-		<a href="form.php"><li class="btn" style="background: rgba(255, 255, 255, 0.5);border-radius: 0px!important;color: #f3f3f3;outline: none;border-color: #444;border-width: 2px;border-radius: 100px!important;margin-bottom:5px;">NEW APPLICATION</li></a>
+		<button><li class="btn all_apps" >APPLICATIONS</li></button>
+		<br>
+		<br>
+
+		<button><a href="form.php"><li class="btn" >NEW APPLICATION</li></a></button>
 	</div>
 	</ul>
 	<div>

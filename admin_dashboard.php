@@ -26,7 +26,7 @@
 			background-color: #111;
 			overflow-x: hidden;
 			padding-top: 20px;
-			background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3) ), url("dog.jpg");
+			background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8) );
 			background-size: cover;
 			box-shadow: 0 0 10px #7b7777;
 		}
@@ -35,7 +35,7 @@
 			padding: 6px 8px 6px 16px;
 			text-decoration: none;
 			font-size: 18px;
-			color: #fff!important;
+			color: #796ed4;
 			display: block;
 		}
 
@@ -94,12 +94,30 @@
 			background: rgba(0,0,255,.2);
 			cursor: pointer
 		}
+
+		button{
+			
+			-webkit-transition-duration: 0.4s; /* Safari */
+			 transition-duration: 0.4s;
+			 background-color:white;
+                        color: black;
+			 border: 2px solid #796ed4;
+			 text-decoration-color: #796ed4;
+			
+            
+                          text-align: center;
+                          text-decoration: none;
+                          display: inline-block;
+			  width: 225px;
+		 }
+	
+		   button:hover {
+			 background-color: #796ed4; /* Green */
+			 color: #796ed4;
+		   }
 		
-		.btn.focus, .btn:focus, .btn:hover {
-			color: #333!important;
-			text-decoration: none;
-			background: #fff!important;
-		}
+		
+		
 	</style>
 </head>
 <body>
@@ -109,12 +127,25 @@
 	</div>
 	</div>
 	<ul style="padding: 10px; margin-top: 20px">
-		<li class="btn all_apps" style="background: rgba(255, 255, 255, 0.5);border-radius: 0px!important;color: #f3f3f3;outline: none;border-color: #444;border-width: 2px;border-radius: 100px!important;margin-bottom:5px;">ALL</li>
-		<li class="btn pen_apps" style="background: rgba(255, 255, 255, 0.5);border-radius: 0px!important;color: #f3f3f3;outline: none;border-color: #444;border-width: 2px;border-radius: 100px!important;margin-bottom:5px;">PENDING</li>
-		<li class="btn new_apps" style="background: rgba(255, 255, 255, 0.5);border-radius: 0px!important;color: #f3f3f3;outline: none;border-color: #444;border-width: 2px;border-radius: 100px!important;margin-bottom:5px;">NEW!</li>
-		<li class="btn acc_apps" style="background: rgba(255, 255, 255, 0.5);border-radius: 0px!important;color: #f3f3f3;outline: none;border-color: #444;border-width: 2px;border-radius: 100px!important;margin-bottom:5px;">ACCEPTED</li>
-		<li class="btn rej_apps" style="background: rgba(255, 255, 255, 0.5);border-radius: 0px!important;color: #f3f3f3;outline: none;border-color: #444;border-width: 2px;border-radius: 100px!important;margin-bottom:5px;">REJECTED</li>
-		<li class="btn rej_apps" style="background: rgba(255, 255, 255, 0.5);border-radius: 0px!important;color: #f3f3f3;outline: none;border-color: #444;border-width: 2px;border-radius: 100px!important;margin-bottom:5px;">ANALYTICS</li>
+		<br>
+		<button><li class="btn all_apps" >ALL</li></button>
+		<br>
+		<br>
+		<button><li class="btn pen_apps">PENDING</li></button>
+		<br>
+		<br>
+		<button><li class="btn new_apps" >NEW!</li></button>
+		<br>
+		<br>
+		<button><li class="btn acc_apps" >ACCEPTED</li></button>
+		<br>
+		<br>
+		<button><li class="btn rej_apps" >REJECTED</li></button>
+		<br>
+		<br>
+
+		<button><li class="btn rej_apps">ANALYTICS</li></button>
+		<br>
 	</div>
 	</ul>
 	<div>

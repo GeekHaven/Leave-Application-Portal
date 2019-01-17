@@ -5,6 +5,7 @@
 body{background: #2C3E50;
     background: -webkit-linear-gradient(to left, #4CA1AF, #2C3E50);
     background: linear-gradient(to left, #4CA1AF, #2C3E50);
+    
 }
 .form
      {
