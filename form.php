@@ -97,7 +97,7 @@
                 <div class="col-md-5" style="padding-right: 20px">
                     <div class="form-group">
                         <div class='input-group date' id='datepicker' data-date-format="dd-mm-yyyy">
-                            <input type='text' class="form-control" placeholder="dd/mmm/yyyy" name="startDate" id="startDate" />
+                            <input type='date' class="form-control" placeholder="dd/mmm/yyyy" name="startDate" id="startDate" />
                             <span class="input-group-addon">
                                 <span class="fa fa-calendar-alt fa-2x"></span>
                             </span>
@@ -109,7 +109,7 @@
                 <div class="col-md-5">
                     <div class="form-group">
                         <div class='input-group date' id='datepicker1' data-date-format="dd-mm-yyyy">
-                            <input type='text' class="form-control" placeholder="dd/mmm/yyyy" name="endDate" id="endDate" />
+                            <input type='date' class="form-control" placeholder="dd/mmm/yyyy" name="endDate" id="endDate" />
                             <span class="input-group-addon">
                                 <i class="fa fa-calendar-alt fa-2x"></i>
                             </span>
