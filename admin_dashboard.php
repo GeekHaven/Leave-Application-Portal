@@ -144,8 +144,7 @@
 		<br>
 		<br>
 
-		<button><li class="btn rej_apps">ANALYTICS</li></button>
-		<br>
+		
 	</div>
 	</ul>
 	<div>
