@@ -263,10 +263,10 @@
 						<input id="Application_id" type="hidden" value=""/>
 						<div class="form-group">        
 						<div class="col-sm-offset-2 col-sm-10">
-							<button class="btn btn-default Acpt" style="background: #4caf50;border-radius: 0px!important;color: #fff;outline: none;border-color: #444;border-width: 2px;">Accept</button>
-							<button class="btn btn-default rjct" style="background: #ff1744;border-radius: 0px!important;color: #fff;outline: none;border-color: #444;border-width: 2px;">Reject</button>
-							<button class="btn btn-default pndg" style="background: #ffc400;border-radius: 0px!important;color: #000;outline: none;border-color: #444;border-width: 2px;">Pending</button>
-							<button type="button" class="btn btn-default" data-dismiss="modal" style="background: #fff;border-radius: 0px!important;color: #000;outline: none;border-color: #000;border-width: 2px;">&nbsp&nbsp Close &nbsp&nbsp</button>
+							<button class="btn btn-default Acpt" style="background: #4caf50;border-radius: 0px!important;color: #fff;outline: none;border-color: #444;border-width: 2px; max-width:80px;">Accept</button>
+							<button class="btn btn-default rjct" style="background: #ff1744;border-radius: 0px!important;color: #fff;outline: none;border-color: #444;border-width: 2px; max-width:80px;">Reject</button>
+							<button class="btn btn-default pndg" style="background: #ffc400;border-radius: 0px!important;color: #000;outline: none;border-color: #444;border-width: 2px; max-width:80px;">Pending</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal" style="background: #fff;border-radius: 0px!important;color: #000;outline: none;border-color: #000;border-width: 2px; max-width:80px;">&nbsp&nbsp Close &nbsp&nbsp</button>
 						</div>
 						</div>
 					</div>
