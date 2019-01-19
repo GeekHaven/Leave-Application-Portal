@@ -1,3 +1,6 @@
+
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,12 +14,12 @@ body{background: #2C3E50;
 .form
      {
         width: 340px;
-        height: 620px;
+        height: 650px;
         background: #e6e6e6;
         border-radius: 8px;
         box-shadow: 0 0 40px -10px #000;
         margin: auto;
-        margin-top: 10%;
+        margin-top: 8%;
         padding: 20px 30px;
         max-width: calc(100vw - 40px);
         box-sizing: border-box;
@@ -80,14 +83,33 @@ body{background: #2C3E50;
 </style>
 </head>
 <body>
+
 <form class="form" action="./core/signupcheck.php" method="post">
-  <h2>USER SIGNUP</h2>
+
+  <h2>USER SIGNUP</h2> 
   <h4>LEAVE APPLICATION PORTAL</h4>
-  <p type="Name:"><input placeholder="Write your name here.." name="Name"/></p>
-  <p type="Enrollment No:"><input placeholder="Enrollment Number here.." name="Enroll"/></p>
-  <p type="Email:"><input placeholder="Write your college Email here.." name="Email"/></p>
-  <p type="Password:"><input placeholder="Enter password" name="Password" type="password"/></p>
-  <p type="RE-ENTER Password:"><input placeholder="Enter password again" name="Passwordagain" type="password"/></p>
+  <?php if (isset($_SESSION['error'])){
+echo "<p style='color: red'>";
+echo $_SESSION['error'];
+echo "</p>";
+    session_destroy();
+}
+
+?>
+
+<?php if (isset($_SESSION['success'])){
+echo "<p style='color: green'>";
+echo $_SESSION['success'];
+echo "</p>";
+    session_destroy();
+}
+
+?>
+  <p type="Name:"><input placeholder="Write your name here.." name="Name"  required/></p>
+  <p type="Enrollment No:"><input placeholder="Enrollment Number here.." name="Enroll" required/></p>
+  <p type="Email:"><input type="email" placeholder="Write your college Email here.." name="Email" required/></p>
+  <p type="Password:"><input placeholder="Enter password" name="Password" type="password" required/></p>
+  <p type="RE-ENTER Password:"><input placeholder="Enter password again" name="Passwordagain" type="password" required/></p>
   <button type="submit" name="submit">Submit</button>
 </form>
 </body>
