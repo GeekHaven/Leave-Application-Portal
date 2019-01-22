@@ -15,8 +15,12 @@
     }
 
     else{
+   
+    
 
-        if( !empty($_POST['Name']) && !empty($_POST['Enroll']) && !empty($_POST['Email']) && !empty($_POST['Password'])){
+        if( !empty(trim($_POST['Name'])) && !empty(trim($_POST['Enroll'])) && !empty(trim($_POST['Email'])) && !empty(trim($_POST['Password']))){
+            
+
             $Name = htmlentities($_POST['Name']);
             $Enroll = htmlentities($_POST['Enroll']);
             $Pass = md5(htmlentities($_POST['Password']));
@@ -24,9 +28,15 @@
             $PassAgain = md5(htmlentities($_POST['Passwordagain']));
         }
         else{        
+            if(empty(trim($_POST['Password']))){
+                $_SESSION['error'] ="Password Cannot be only spaces.";
+                header("location: ../usersignup.php"); 
+                exit();
+            }
             $_SESSION['error'] ="Please fill all the fields";
-                    //echo '<script language="javascript">alert("Try Again!")</script>';
-                    header("Refresh: 1; url=../usersignup.php");
+                    //echo '<script language="javascript">alert("T header("Refresh: 1; url=../usersignup.php");
+                    header("location: ../usersignup.php"); 
+                    exit();
                 }
 
       
