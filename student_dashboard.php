@@ -60,7 +60,10 @@
 		}
 
 		@media screen and (max-height: 450px) {
-			.sidenav {padding-top: 15px;}
+			.sidenav {
+				padding-top: 15px;
+				text-decoration: none;
+			}
 			.sidenav a {
 				font-size: 18px;
 				text-decoration: none;		
