@@ -10,7 +10,7 @@
     */
     /**********/
     //testing purpose
-    $_SESSION['branch'] = 'ece';
+  //  $_SESSION['branch'] = 'ece';
     //testing
 
     require 'db.php' ;

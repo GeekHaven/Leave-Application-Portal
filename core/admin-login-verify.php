@@ -3,10 +3,55 @@
     session_start();
 
     require 'db.php' ;
+  
 
-    // verify login and set session variable for branch also
-    // we will divide application into two section ECE and IT
-    // division is done for admin-dashboard-fecth.php if ECE department opens dashboard only ECE students applications will be shown
-    // else other one
+    if(!isset($_POST['submit'])){
+        echo '<script language="javascript"> alert("Access Denied") </script>'; 
+        header("Refresh: 1; url=index.php");
+    }
 
-    
+    else{
+
+        if(isset($_POST['Email']) && isset($_POST['Password'])){
+        	$pass = md5(htmlentities($_POST['Password']));
+			$email = htmlentities($_POST['Email']);
+        }
+        
+        
+
+        try {
+        	
+        
+        	$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        	$stmt = $connection->prepare('SELECT * FROM users WHERE Email = :email  AND Password = :password');
+    		$stmt->execute(['email' => $email, 'password' => $pass]);
+    		$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    		if($user == Null){
+    			echo '<script language="javascript">alert("Invalid credentials! Try Again")</script>';  
+    	      	header("Refresh: 1; url=../index.php"); 
+    		}
+
+
+    		else{		    
+              
+				$_SESSION['user'] = $email;
+				$_SESSION['branch']=$_POST['branch'];
+                  header("location: ../admin_dashboard.php"); 
+                  
+    	    }
+
+        }
+    	
+    	catch(PDOException $e){
+        		echo '<script language="javascript">';
+          		echo '$sql . "<br>" . $e->getMessage();';
+          		echo '</script>';   
+          		header("Refresh: 1; url=../index.php");
+        	}
+
+        $connection = null;
+    }
+
+?>

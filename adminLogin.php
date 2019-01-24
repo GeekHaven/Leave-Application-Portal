@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="static/css/login.css">
 <body>
 
-<form action="" method="post">
+<form action="core/admin-login-verify.php" method="post">
   <h1 class="admin-heading">Welcome back Admin</h1>
 
   <div class="imgcontainer">
