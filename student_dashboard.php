@@ -69,7 +69,11 @@
 			}
 		}
 		
-		sidenav a {
+		.sidenav a {
+				text-decoration: none;		
+			}
+		
+		.sidenav a:hover {
 				text-decoration: none;		
 			}
 
