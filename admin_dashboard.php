@@ -152,11 +152,14 @@ if(!isset($_SESSION['loggedin'])){
 		<br>
 		<br>
 		<button><li class="btn rej_apps" >REJECTED</li></button>
+		
 		<br>
 		<br>
-
+		<a href="adminlogout.php"><li  class="btn btn-danger" style="background:#FF1744; color:white; border:none; padding:0px; margin:0px;" >Log-out</li></a>
 	</div>
+	
 	</ul>
+	
 	<div>
 		<h3 id="navdars" style="text-align: center;float: right;margin-right: 40px;margin-bottom: 50px;border-bottom: 2px solid cornflowerblue;">ALL APPLICATIONS</h3>
 		<div style="padding-left: 20px;width: 83%;margin-left: 250px;padding-right: 20px">

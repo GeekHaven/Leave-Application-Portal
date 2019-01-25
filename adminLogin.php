@@ -1,3 +1,14 @@
+<?php session_start();
+
+if(isset($_SESSION['loggedin'])){
+  
+     header("location: ./admin_dashboard.php");
+
+}
+
+?>
+
+
 <link rel="stylesheet" type="text/css" href="static/css/login.css">
 <body>
 
