@@ -68,3 +68,40 @@ span.psw {
        width: 100%;
     }
 }
+
+@media screen and (max-width: 768px) {
+    input[type=email], input[type=password], input[type=text], select, .sub, form {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+
+  @media screen and (max-width: 480px) {
+    input[type=email], input[type=password], input[type=text], select, .sub, .container, img.avatar, .imgcontainer{
+      width: 320px;
+      margin-top: 0;
+      
+    }
+
+    img.avatar {
+        width: 35%;
+        height: 20%;
+        border-radius: 50%;
+    }
+  }
+
+ @media screen and (max-width: 320px) {
+    input[type=email], input[type=password], input[type=text], select, .sub, .container, img.avatar, .imgcontainer{
+      width: 275px;
+      margin-top: 0;
+      
+    }
+
+    img.avatar {
+        width: 35%;
+        height: 20%;
+        border-radius: 50%;
+    }
+  }
+
