@@ -161,7 +161,7 @@ if(!isset($_SESSION['loggedin'])){
 	</ul>
 	
 	<div>
-		<h3 id="navdars" style="text-align: center;float: right;margin-right: 40px;margin-bottom: 50px;border-bottom: 2px solid cornflowerblue;">ALL APPLICATIONS</h3>
+		<h3 id="navdars" style="text-align: center;float: right;margin-right: 40px;margin-bottom: 50px;border-bottom: 2px solid cornflowerblue;background: #00ffaf;padding: 5px;border-radius: 5px;">ALL APPLICATIONS</h3>
 		<div style="padding-left: 20px;width: 83%;margin-left: 250px;padding-right: 20px">
 			<table id="records_table" class="table-responsive" style="box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0px 2px 20px 0 rgba(0, 0, 0, 0.24)">
 				<tr>
@@ -311,6 +311,7 @@ if(!isset($_SESSION['loggedin'])){
 		            console.log(data);
 					response = $.parseJSON(data);
 					$('#navdars').html("PENDING APPLICATIONS");
+					$('#navdars').css("background","#ffc400");
 					$("#records_table").find("tr:gt(0)").remove();
 				$(function() {
 					$.each(response, function(i, item) {
@@ -363,6 +364,7 @@ if(!isset($_SESSION['loggedin'])){
 		            console.log(data);
 					response = $.parseJSON(data);
 					$('#navdars').html("NEW APPLICATIONS");
+					$('#navdars').css("background","#7cbeee");
 					$("#records_table").find("tr:gt(0)").remove();
 				$(function() {
 					$.each(response, function(i, item) {
@@ -415,6 +417,7 @@ if(!isset($_SESSION['loggedin'])){
 		            console.log(data);
 					response = $.parseJSON(data);
 					$('#navdars').html("ACCEPTED APPLICATIONS");
+					$('#navdars').css("background","#4caf50");
 					$("#records_table").find("tr:gt(0)").remove();
 				$(function() {
 					$.each(response, function(i, item) {
@@ -467,6 +470,7 @@ if(!isset($_SESSION['loggedin'])){
 		            console.log(data);
 					response = $.parseJSON(data);
 					$('#navdars').html("REJECTED APPLICATIONS");
+					$('#navdars').css("background","#FF1744");
 					$("#records_table").find("tr:gt(0)").remove();
 				$(function() {
 					$.each(response, function(i, item) {
