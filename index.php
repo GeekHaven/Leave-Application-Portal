@@ -13,8 +13,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
 
-<h2>Login Form</h2>
-
 <form action="./core/verifylogin.php" method="post">
   <div class="imgcontainer">
     <img src="index.png" alt="Avatar" class="avatar" height="200" width="100">
