@@ -90,27 +90,54 @@
 		.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
 			background-color: #f6f6f6!important;
 		}
-
 		table {
-			font-family: 'Roboto', sans-serif;
-			border-collapse: collapse;
+			background:#474787;
+			border-radius: 10px;
+			overflow: hidden;
 			width: 100%;
+			margin: 0 auto;
+		}
+
+		table thead tr {
+   			height: 60px;
+			}
+
+		table thead tr th{
+			font-size: 18px;
+			color: #fff;
+			line-height: 1.2;
+			font-weight: unset;
+			width: 260px;
+			padding-left: 40px;
+			text-align: left;
+
+		}
+		tbody{
+			background:#fff;
+		}
+		tbody tr{
+			height: 50px;
+			font-size: 15px;
+			line-height: 1.2;
+			font-weight: unset;
 		}
 
 		td, th {
-			border: 1px solid #dddddd;
+			line-height: 1.2;
+			font-weight: unset;
+			width: 260px;
+			padding:5px;
+			color:#7a7a7a;
 			text-align: left;
-			padding: 4px;
-			padding-left: 5px;
 		}
 
-		th {
-			background: #796ed4;
-			color: #fff;
+		tbody tr:nth-child(2n) {
+    		background-color: #f5f5f5;
 		}
 
-		tr:nth-child(odd) {
-			background-color: #dddddd;
+		tbody tr:hover {
+			background-color: #f5f5f5;
+			cursor: pointer
 		}
 
 		.row-data:hover {
@@ -161,21 +188,26 @@
 	<div>
 		<h3 id="navdars" style="text-align: center;float: right;margin-right: 40px;margin-bottom: 50px;border-bottom: 2px solid cornflowerblue;background: #00ffaf;padding: 5px;border-radius: 5px;">APPLICATIONS</h3>
 		<div style="padding-left: 20px;width: 83%;margin-left: 250px;padding-right: 20px">
-			<table id="records_table" class="table-responsive" style="box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0px 2px 20px 0 rgba(0, 0, 0, 0.24)">
+			<table id="records_table" class="table-responsive" style="box-shadow: box-shadow: 0 -3px 50px 0 rgba(0, 0, 0, 0.19), 0px 2px 16px 0 rgba(0, 0, 0, 0.24);">
+				<thead>
 				<tr>
-					<th style="padding: 10px">NAME</t>
-					<th style="padding: 10px">ENROLLMENT NUMBER</th>
-					<th style="padding: 10px">BRANCH</th>
-					<th style="padding: 10px">SEMESTER</th>
-					<th style="padding: 10px">NATURE OF LEAVE</th>
-					<th style="padding: 10px">PURPOSE</th>
-					<th style="padding: 10px">CLASSES SCHEDULED</th>
-					<th style="padding: 10px">ADDRESS</th>
-					<th style="padding: 10px">MOBILE</th>
-					<th style="padding: 10px">EMAIL</th>
-					<th style="padding: 10px">UPLOADS</th>
-					<th style="padding: 10px">STATUS</th>
+					<th style="padding: 10px">Name</th>
+					<th style="padding: 10px">Enrollment Number</th>
+					<th style="padding: 10px">Branch</th>
+					<th style="padding: 10px">Semester</th>
+					<th style="padding: 10px">Nature Of Leave</th>
+					<th style="padding: 10px">Purpose</th>
+					<th style="padding: 10px">Classes Scheduled</th>
+					<th style="padding: 10px">Address</th>
+					<th style="padding: 10px">Mobile</th>
+					<th style="padding: 10px">Email</th>
+					<th style="padding: 10px">Uploads</th>
+					<th style="padding: 10px">Status</th>
 				</tr>
+				</thead>
+				<tbody>
+				<!-- tr -->
+				</tbody>
 			</table>
 		</div>
 		<div id="myModal" class="modal fade" role="dialog">
