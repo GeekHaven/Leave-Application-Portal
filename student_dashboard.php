@@ -182,7 +182,7 @@
 		<button><a href="form.php"><li class="btn" >NEW APPLICATION</li></a></button>
 		<br>
 		<br>
-		<a href="studentlogout.php"><li  class="btn btn-danger" style="background:#FF1744; color:white; border:none; padding:0px; margin:0px;" >Log-out</li></a>
+		<a href="core/studentlogout.php"><li  class="btn btn-danger" style="background:#FF1744; color:white; border:none; padding:0px; margin:0px;" >Log-out</li></a>
 	</div>
 	</ul>
 	<div>

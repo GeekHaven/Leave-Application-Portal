@@ -180,7 +180,7 @@ if(!isset($_SESSION['loggedin'])){
 		
 		<br>
 		<br>
-		<a href="adminlogout.php"><li  class="btn btn-danger" style="background:#FF1744; color:white; border:none; padding:0px; margin:0px;" >Log-out</li></a>
+		<a href="core/adminlogout.php"><li  class="btn btn-danger" style="background:#FF1744; color:white; border:none; padding:0px; margin:0px;" >Log-out</li></a>
 	</div>
 	
 	</ul>
