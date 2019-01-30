@@ -55,6 +55,10 @@ body{background: #2C3E50;
         border-bottom:2px solid #bebed2
         }
         input:focus{border-bottom:2px solid #78788c}
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active  {-webkit-box-shadow: 0 0 0 30px #e6e6e6 inset !important;}
         p:before{content:attr(type);
         display:block;margin:28px 0 0;
         font-size:14px;color:#5a5a5a}
