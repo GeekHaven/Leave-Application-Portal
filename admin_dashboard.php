@@ -151,36 +151,40 @@ if(!isset($_SESSION['loggedin'])){
 			 background-color: #796ed4; /* Green */
 			 color: #796ed4;
 		   }
-		
-		
+	  
+	  .button-fix button{
+		margin:2px 0px;
+
+	  }
 		
 	</style>
 </head>
 <body>
 	<div class="sidenav">
 	<div style="height: 220px;width: 100%;padding: 10px;">
-	<div style="background: url('peoM.jpg');height: inherit;width: inherit;background-size: cover;border-radius: 100%">
+	<div style="background: url('peoM.jpg');height: inherit;width: inherit;background-size: cover;border-radius: 100% ">
 	</div>
 	</div>
 	<ul style="padding: 10px; margin-top: 20px">
 		<br>
+	<div class="button-fix">
 		<button><li class="btn all_apps" >ALL</li></button>
-		<br>
-		<br>
+		
 		<button><li class="btn pen_apps">PENDING</li></button>
-		<br>
-		<br>
+		
+	
 		<button><li class="btn new_apps" >NEW!</li></button>
-		<br>
-		<br>
+		
+		
 		<button><li class="btn acc_apps" >ACCEPTED</li></button>
-		<br>
-		<br>
+	
+		
 		<button><li class="btn rej_apps" >REJECTED</li></button>
 		
 		<br>
 		<br>
 		<a href="core/adminlogout.php"><li  class="btn btn-danger" style="background:#FF1744; color:white; border:none; padding:0px; margin:0px;" >Log-out</li></a>
+		</div>
 	</div>
 	
 	</ul>

@@ -177,10 +177,11 @@
 	<ul style="padding: 10px; margin-top: 70px">
 		<button><li class="btn all_apps" >APPLICATIONS</li></button>
 		<br>
-		<br>
+		<div style="margin:5px 0;">
 
-		<button><a href="form.php"><li class="btn" >NEW APPLICATION</li></a></button>
-		<br>
+		<button><a href="form.php"\><li class="btn" >NEW APPLICATION</li></a></button>
+		</div>
+		
 		<br>
 		<a href="core/studentlogout.php"><li  class="btn btn-danger" style="background:#FF1744; color:white; border:none; padding:0px; margin:0px;" >Log-out</li></a>
 	</div>
