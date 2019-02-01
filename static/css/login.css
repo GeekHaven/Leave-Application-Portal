@@ -5,10 +5,7 @@ body {font-family: 'Roboto', sans-serif;}
 h1.admin-heading {
     text-align: center;
 }
-form {
-    border: 3px solid #f1f1f1;
-    padding-bottom: 45px;
-}
+form {border: 3px solid #f1f1f1;}
 
 input[type=email], input[type=password], input[type=text], select {
     width: 100%;
@@ -60,11 +57,6 @@ img.avatar {
     align-content: center;
     width: 35%;
     
-}
-
-.container-forgot{
-    display: flex;
-    justify-content: end;
 }
 
 span.psw {
