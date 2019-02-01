@@ -9,9 +9,6 @@
 	3 -> accepted
     */
     /**********/
-    //testing purpose
-    $_SESSION['branch'] = 'it';
-    //testing
 
     require 'db.php' ;
 
