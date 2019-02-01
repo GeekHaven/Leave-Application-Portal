@@ -37,7 +37,9 @@ if(!isset($_SESSION['loggedin'])){
 			background-color: #111;
 			overflow-x: hidden;
 			padding-top: 20px;
-			background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8) );
+			background: #42275a;  /* fallback for old browsers */
+			background: -webkit-linear-gradient(to right, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #734b6d, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 			background-size: cover;
 			box-shadow: 0 0 10px #7b7777;
 		}
@@ -137,7 +139,8 @@ if(!isset($_SESSION['loggedin'])){
 			 transition-duration: 0.4s;
 			 background-color:white;
                         color: black;
-			 border: 2px solid #796ed4;
+						border: 0;
+			 box-shadow: 0 0 12px black;
 			 text-decoration-color: #796ed4;
 			
             
@@ -153,7 +156,7 @@ if(!isset($_SESSION['loggedin'])){
 		   }
 	  
 	  .button-fix button{
-		margin:2px 0px;
+		margin:5px 0px;
 
 	  }
 		
