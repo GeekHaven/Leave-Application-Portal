@@ -21,10 +21,10 @@
   <div class="container">
     <br>
     <label for="enroll"><b>Enrollment Number</b></label>
-    <input type="text" placeholder="Enter Email" name="enroll" required>
+    <input type="text" placeholder="Enter Enrollment Number" name="enroll" required>
      <br>
     <label for="Email"><b>Username</b></label>
-    <input type="email" placeholder="Enter Email" name="Email" required>
+    <input type="email" placeholder="Enter Username" name="Email" required>
      <br>
     <label for="Password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="Password" required>
