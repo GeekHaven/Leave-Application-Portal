@@ -35,7 +35,7 @@
     </label>
   </div>
 
-  <div class="container container-forgot" style="background-color:#f1f1f1">
+  <div class="container student-forgot" style="background-color:#f1f1f1">
   
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>

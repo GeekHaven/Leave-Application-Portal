@@ -36,7 +36,7 @@ if(isset($_SESSION['loggedin'])){
         
    <input type="submit" name="submit" value="submit" class="sub">
     <label>
-      <h3>
+      <h3 class="admin-forgot">
         <span>Not Admin ?? Click <a href="index.php">Here</a></span>
         <span class="psw">Forgot <a href="#">password?</a></span>
       </h3>
