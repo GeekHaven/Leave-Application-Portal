@@ -373,7 +373,8 @@ if(!isset($_SESSION['loggedin'])){
 							$('<td id="stshedornt'+item.id+'">').text(item.classScheduledOnLeave.toUpperCase()),
 							$('<td style="display: none" id="ststrtdat'+item.id+'">').text(item.startDate.toUpperCase()),
 							$('<td style="display: none" id="stenddat'+item.id+'">').text(item.endDate.toUpperCase()),
-							$('<td id="addr'+item.id+'">').text(item.address),
+							$('<td id="addr'+item.id+'">').text(item.address.substring(0,30).concat("...")),
+							$('<td id="addrCopy'+item.id+'" style="display:none">').text(item.address),
 							$('<td id="stmbno'+item.id+'">').text(item.mobile),
 							$('<td id="stemai'+item.id+'">').text(item.email),
 							$('<td>').append($('<a>').attr({href:"uploads/"+item.uploadedImageName,target:"_blank"}).text("UP")),
@@ -426,7 +427,8 @@ if(!isset($_SESSION['loggedin'])){
 							$('<td id="stshedornt'+item.id+'">').text(item.classScheduledOnLeave.toUpperCase()),
 							$('<td style="display: none" id="ststrtdat'+item.id+'">').text(item.startDate.toUpperCase()),
 							$('<td style="display: none" id="stenddat'+item.id+'">').text(item.endDate.toUpperCase()),
-							$('<td id="addr'+item.id+'">').text(item.address),
+							$('<td id="addr'+item.id+'">').text(item.address.substring(0,30).concat("...")),
+							$('<td id="addrCopy'+item.id+'" style="display:none">').text(item.address),
 							$('<td id="stmbno'+item.id+'">').text(item.mobile),
 							$('<td id="stemai'+item.id+'">').text(item.email),
 							$('<td>').append($('<a>').attr({href:"uploads/"+item.uploadedImageName,target:"_blank"}).text("UP")),
@@ -479,7 +481,8 @@ if(!isset($_SESSION['loggedin'])){
 							$('<td id="stshedornt'+item.id+'">').text(item.classScheduledOnLeave.toUpperCase()),
 							$('<td style="display: none" id="ststrtdat'+item.id+'">').text(item.startDate.toUpperCase()),
 							$('<td style="display: none" id="stenddat'+item.id+'">').text(item.endDate.toUpperCase()),
-							$('<td id="addr'+item.id+'">').text(item.address),
+							$('<td id="addr'+item.id+'">').text(item.address.substring(0,30).concat("...")),
+							$('<td id="addrCopy'+item.id+'" style="display:none">').text(item.address),
 							$('<td id="stmbno'+item.id+'">').text(item.mobile),
 							$('<td id="stemai'+item.id+'">').text(item.email),
 							$('<td>').append($('<a>').attr({href:"uploads/"+item.uploadedImageName,target:"_blank"}).text("UP")),
@@ -532,7 +535,8 @@ if(!isset($_SESSION['loggedin'])){
 							$('<td id="stshedornt'+item.id+'">').text(item.classScheduledOnLeave.toUpperCase()),
 							$('<td style="display: none" id="ststrtdat'+item.id+'">').text(item.startDate.toUpperCase()),
 							$('<td style="display: none" id="stenddat'+item.id+'">').text(item.endDate.toUpperCase()),
-							$('<td id="addr'+item.id+'">').text(item.address),
+							$('<td id="addr'+item.id+'">').text(item.address.substring(0,30).concat("...")),
+							$('<td id="addrCopy'+item.id+'" style="display:none">').text(item.address),
 							$('<td id="stmbno'+item.id+'">').text(item.mobile),
 							$('<td id="stemai'+item.id+'">').text(item.email),
 							$('<td>').append($('<a>').attr({href:"uploads/"+item.uploadedImageName,target:"_blank"}).text("UP")),
@@ -602,7 +606,7 @@ if(!isset($_SESSION['loggedin'])){
 			var stnatleave = document.getElementById("stnatleave"+id).textContent;
 			var stpurpose = document.getElementById("stpurpose"+id).textContent;
 			var stshedornt = document.getElementById("stshedornt"+id).textContent;
-			var addr = document.getElementById("addr"+id).textContent;
+			var addr = document.getElementById("addrCopy"+id).textContent;
 			var stmbno = document.getElementById("stmbno"+id).textContent;
 			var stemai = document.getElementById("stemai"+id).textContent;
 			var ststrtdat = document.getElementById("ststrtdat"+id).textContent;
@@ -664,7 +668,8 @@ if(!isset($_SESSION['loggedin'])){
 							$('<td id="stshedornt'+item.id+'">').text(item.classScheduledOnLeave.toUpperCase()),
 							$('<td style="display: none" id="ststrtdat'+item.id+'">').text(item.startDate.toUpperCase()),
 							$('<td style="display: none" id="stenddat'+item.id+'">').text(item.endDate.toUpperCase()),
-							$('<td id="addr'+item.id+'">').text(item.address),
+							$('<td id="addr'+item.id+'">').text(item.address.substring(0,30).concat("...")),
+							$('<td id="addrCopy'+item.id+'" style="display:none">').text(item.address),
 							$('<td id="stmbno'+item.id+'">').text(item.mobile),
 							$('<td id="stemai'+item.id+'">').text(item.email),
 							$('<td>').append($('<a>').attr({href:"uploads/"+item.uploadedImageName,target:"_blank"}).text("UP")),
