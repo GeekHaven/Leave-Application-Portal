@@ -30,7 +30,6 @@
 
 		    		if($applications == Null){
 		    			echo '<script language="javascript">alert("No applications currently")</script>';  
-		    	      	echo $_SESSION['branch'];
 		    		}
 		    		else{		    
 		                // json_endcode(data)
