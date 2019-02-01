@@ -54,8 +54,28 @@
 
     <!-- Form -->
     <div class="container mt-5">
+  
+
         <form action="./core/application-submission.php" method="post" enctype="multipart/form-data">
+ 
+           
             <h2 class="text-center">Apply for Leave</h2>
+            <?php if (isset($_SESSION['error'])){
+echo "<span class='alert alert-danger'>";
+echo $_SESSION['error'];
+echo "</span>";
+    unset($_SESSION['error']);
+}
+
+?>
+   <?php if (isset($_SESSION['success'])){
+echo "<span class='alert alert-success'>";
+echo $_SESSION['success'];
+echo "</span>";
+    unset($_SESSION['success']);
+}
+
+?>
             <div class="row mt-5">
                 <div class="col-md-6">
                     <div class="form-group">

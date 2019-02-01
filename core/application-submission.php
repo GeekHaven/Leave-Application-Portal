@@ -1,13 +1,17 @@
 <?php 
-     
+    
     session_start();
 
     require 'db.php' ;
   
 
     if(!empty($_POST['submit'])) {
-        echo '<script language="javascript"> alert("all fields required") </script>'; 
-        header("Refresh: 1; url=../student_dashboard.php");
+		$_SESSION['error'] ="all fields required";
+                   
+		header("location: ../form.php"); 
+		exit();
+      //  echo '<script language="javascript"> alert("all fields required") </script>'; 
+       // header("Refresh: 1; url=../student_dashboard.php");
     }
 
     else if(isset($_SESSION['id'])){
@@ -28,32 +32,46 @@
 
     	# backend check for empty fields
     	if(empty(trim($studentName)) || empty(trim($branch)) || empty(trim($semester)) || empty(trim($startDate)) || empty(trim($endDate)) || empty(trim($natureOfLeave)) || empty(trim($purpose)) || empty(trim($classScheduledOnLeave)) || empty(trim($address)) || empty(trim($mobile)) ) {
-    		echo '<script language="javascript"> alert("unfilled fields") </script>'; 
-        	header("Refresh: 1; url=../student_dashboard.php");
-        	exit();
+			$_SESSION['error'] ="Pleas fill all the fields";
+                   
+		header("location: ../form.php"); 
+		exit();
+			
+			//echo '<script language="javascript"> alert("unfilled fields") </script>'; 
+        	///header("Refresh: 1; url=../student_dashboard.php");
+        //	exit();
     	}
 
     	# backend check for text => only alphabets can be used in these fields
 		if ( !preg_match("/^[a-zA-Z]*$/", $branch) || !preg_match("/^[a-zA-Z]*$/", $classScheduledOnLeave)) {
-        	echo '<script language="javascript"> alert("invalid fields") </script>'; 
-        	header("Refresh: 1; url=../student_dashboard.php");
-        	exit();
+			$_SESSION['error'] ="invalid fields";
+                   
+		header("location: ../form.php"); 
+		exit();
+			
+			
+		
 		} 
 
 		if ( strtolower($branch) == 'ece' || strtolower($branch) == 'it') {
 			//Ok
 		} else {
-        	echo '<script language="javascript"> alert("invalid branch selection") </script>'; 
-        	header("Refresh: 1; url=../student_dashboard.php");
-        	exit();
+
+			$_SESSION['error'] ="invalid branch selection";
+                   
+			header("location: ../form.php"); 
+			exit();
+				
+        
 		} 
 
 		if ( strtolower($classScheduledOnLeave) == 'yes' || strtolower($classScheduledOnLeave) == 'no') {
 			//Ok
 		} else {
-        	echo '<script language="javascript"> alert("invalid classScheduledOrNot") </script>'; 
-        	header("Refresh: 1; url=../student_dashboard.php");
-        	exit();
+        	$_SESSION['error'] ="invalid class schedule";
+                   
+			header("location: ../form.php"); 
+			exit();
 		} 
 
 		
@@ -61,8 +79,9 @@
 
     	#######################
     	##### File Upload #####
-    	#######################
-    	if (!empty($_FILES['file'])) {
+		#######################
+		
+    	if (!empty(trim($_FILES['file']))) {
     		$file = $_FILES['file'];
 			print_r($file);
 			//die($file);
@@ -90,16 +109,22 @@
 						move_uploaded_file($fileTmpName, $fileDestination);
 						# header("Location: ./index.php?fileUpload==success");
 					} else {
-						echo '<script language="javascript"> alert("File is Too Big") </script>'; 
-	        			header("Refresh: 1; url=student_dashboard.php");
+						$_SESSION['error'] ="File is too big";
+                   
+						header("location: ../form.php"); 
+						exit();
 					}	
 					} 	else {
-						echo '<script language="javascript"> alert("There Was An Error in Uploading File") </script>'; 
-	        			header("Refresh: 1; url=student_dashboard.php");
+						$_SESSION['error'] ="There was a error in uploading file";
+                   
+						header("location: ../form.php"); 
+						exit();
 					}
 					}	else {
-						echo '<script language="javascript"> alert("Format Not Supported") </script>'; 
-	        			header("Refresh: 1; url=student_dashboard.php");
+						$_SESSION['error'] ="File Format not supported";
+                   
+						header("location: ../form.php"); 
+						exit();
 					}
     	} else {
     		echo '<script language="javascript"> alert("Tryf !") </script>' ; 
@@ -112,12 +137,16 @@
                 $cmd = $sql->execute(["studentName" => $studentName,"rollNumber" => $_SESSION['enroll'],"branch" => $branch,"semester" => $semester,"startDate" => $startDate,"endDate"=>$endDate,"natureOfLeave" => $natureOfLeave,"purpose" => $purpose,"classScheduledOnLeave" => $classScheduledOnLeave,"address" => $address,"mobile" => $mobile,"email" => $_SESSION['user'],"uploadedImageName" => $uploadedImageName]);
 
                 if($cmd){
-                      echo '<script language="javascript"> alert("Succesfully submmited") </script>' ; 
-                    header("Refresh: 1; url=../student_dashboard.php"); 
+					$_SESSION['success'] ="Form has been submitted ";
+                   
+					header("location: ../form.php"); 
+					exit(); 
                 }
                   
                 else{
-                    echo '<script language="javascript"> alert("Try Again !") </script>' ;     
-                    header("Refresh: 1; url=../student_dashboard.php");
+                    $_SESSION['error'] ="Try again";
+                   
+						header("location: ../form.php"); 
+						exit();
                 }
 	   	}
