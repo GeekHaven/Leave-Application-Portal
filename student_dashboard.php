@@ -136,8 +136,8 @@
 		}
 
 		tbody tr:hover {
-			background-color: #f5f5f5;
-			cursor: pointer
+			background-color: #c2bfda;
+			cursor: pointer;
 		}
 
 		.row-data:hover {

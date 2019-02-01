@@ -127,7 +127,7 @@ if(!isset($_SESSION['loggedin'])){
 		}
 
 		tbody tr:hover {
-			background-color: #f5f5f5;
+			background-color: #c2bfda;
 			cursor: pointer
 		}
 
