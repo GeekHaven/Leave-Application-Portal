@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.standalone.min.css">
     <link rel="stylesheet" href="./static/css/form.css">
     <title>Dashboard</title>
-
+  
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
 
@@ -202,9 +202,12 @@ echo "</span>";
                     <div class="form-group">
                         <label for="company">Attachments (if any)</label>
                         <div class="file-field input-field">
-                          <div class="btn">
-                            <input type="file" name="file">
-                          </div>
+                        
+                    <hr/>
+                    <div id="filediv"><input name="file[]" type="file" id="file"/></div><br/>
+           
+                    <input type="button" id="add_more" class="btn btn-success" value="Add More Files"/>
+                          
                         </div>
                     </div>
 
@@ -218,7 +221,7 @@ echo "</span>";
 
 
             <div style="padding-top: 20px">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">Submit</button>
             </div>
             <div></div>
         </form>
@@ -231,4 +234,51 @@ echo "</span>";
         <i class="fa fa-twitter fa-2x " aria-hidden="true"></i>
         <p class="mb-1 mt-2">Web Development Wing, Geekhaven</p>
     </footer>
+    <script>
+   var abc = 0;
+
+$(document).ready(function() {
+
+    $('#add_more').click(function() {
+        $(this).before($("<div/>", {id: 'filediv'}).fadeIn('slow').append(
+                $("<input/>", {name: 'file[]', type: 'file', id: 'file'}),        
+                $("<br/><br/>")
+                ));
+    });
+
+
+$('body').on('change', '#file', function(){
+            if (this.files && this.files[0]) {
+                 abc += 1; 
+				
+				var z = abc - 1;
+                var x = $(this).parent().find('#previewimg' + z).remove();
+                $(this).before("<div id='abcd"+ abc +"' class='abcd'><img id='previewimg" + abc + "' src=''/></div>");
+               
+			    var reader = new FileReader();
+                reader.onload = imageIsLoaded;
+                reader.readAsDataURL(this.files[0]);
+                
+			    $(this).hide();
+                $("#abcd"+ abc).append($("<img/>", {id: 'img1', src: './x.png', alt: 'delete'}).click(function() {
+                $(this).parent().parent().remove();
+                }));
+            }
+        });
+
+   
+    function imageIsLoaded(e) {
+        $('#previewimg' + abc).attr('src', e.target.result);
+    };
+
+    $('#upload').click(function(e) {
+        var name = $(":file").val();
+        if (!name)
+        {
+            alert("First Image Must Be Selected");
+            e.preventDefault();
+        }
+    });
+});
+    </script>
 </body>

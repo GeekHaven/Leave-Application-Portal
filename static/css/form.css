@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 form {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 textarea:not(textarea),
@@ -12,9 +12,11 @@ input[type="password"]:not(textarea),
 input[type="email"]:not(textarea),
 input[type="number"]:not(textarea),
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {-webkit-box-shadow: 0 0 0 30px white inset !important;}
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
 [type="text"].form-control:not(textarea),
 [type="password"].form-control:not(textarea),
 [type="email"].form-control:not(textarea),
@@ -25,4 +27,79 @@ input:-webkit-autofill:active  {-webkit-box-shadow: 0 0 0 30px white inset !impo
 
 .block {
   display: inline;
+}
+
+form {
+  background-color: white;
+}
+
+#formdiv {
+  width: 500px;
+  float: left;
+  text-align: center;
+}
+
+.upload {
+  background-color: #ff0000;
+  border: 1px solid #ff0000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  text-shadow: 1px 1px 0px green;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.75);
+}
+.upload:hover {
+  cursor: pointer;
+  background: #c20b0b;
+  border: 1px solid #c20b0b;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
+}
+#file {
+  color: green;
+  padding: 5px;
+
+  background-color: #f9ffe5;
+}
+#upload {
+  margin-left: 45px;
+}
+
+#noerror {
+  color: green;
+  text-align: left;
+}
+#error {
+  color: red;
+  text-align: left;
+}
+#img {
+  width: 17px;
+  border: none;
+  height: 17px;
+  margin-left: -20px;
+  margin-bottom: 91px;
+}
+
+.abcd {
+  text-align: center;
+}
+
+.abcd img {
+  height: 100px;
+  width: 100px;
+  padding: 5px;
+  border: 1px solid rgb(232, 222, 189);
+}
+b {
+  color: red;
+}
+#formget {
+  float: right;
+}
+#img1 {
+  width: 25px;
+  border: none;
+  height: 25px;
+  margin-left: -20px;
+  margin-bottom: 91px;
 }
