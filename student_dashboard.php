@@ -401,17 +401,21 @@
 							opacit = .6;
 							tity = "ACCEPTED";
 						}
+						var address = item.address.substring(0,30);
+						address = address.length>=30?address.concat("..."):address;
+						var purpose = item.purpose.substring(0,30);
+						purpose = purpose.length>=30?purpose.concat("..."):purpose;
 						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" style="opacity:'+opacit+'" class="row-data" data-toggle="modal" data-target="#myModal">').append(
 							$('<td style="padding-left: 10px;padding-right: 10px" id="stname'+item.id+'">').text(item.studentName),
 							$('<td id="stroll'+item.id+'">').text(item.rollNumber.toUpperCase()),
 							$('<td id="stbrnch'+item.id+'">').text(item.branch.toUpperCase()),
 							$('<td id="stsem'+item.id+'">').text(item.semester),
 							$('<td id="stnatleave'+item.id+'">').text(item.natureOfLeave),
-							$('<td id="stpurpose'+item.id+'">').text(item.purpose),
+							$('<td id="stpurpose'+item.id+'">').text(purpose),
 							$('<td id="stshedornt'+item.id+'">').text(item.classScheduledOnLeave.toUpperCase()),
 							$('<td style="display: none" id="ststrtdat'+item.id+'">').text(item.startDate.toUpperCase()),
 							$('<td style="display: none" id="stenddat'+item.id+'">').text(item.endDate.toUpperCase()),
-							$('<td id="addr'+item.id+'">').text(item.address.substring(0,30).concat("...")),
+							$('<td id="addr'+item.id+'">').text(address),
 							$('<td id="addrCopy'+item.id+'" style="display:none">').text(item.address),
 							$('<td id="stmbno'+item.id+'">').text(item.mobile),
 							$('<td id="stemai'+item.id+'">').text(item.email),
