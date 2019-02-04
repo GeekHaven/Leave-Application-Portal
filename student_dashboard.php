@@ -263,7 +263,7 @@
 						<div class="form-group">
 						<label class="control-label col-sm-2" for="email">PURPOSE</label>
 						<div class="col-sm-4">
-							<p type="email" class="form-control" id="ans_purpose"></p>
+							<textarea type="email" class="form-control" id="ans_purpose"></textarea>
 						</div>
 						</div>
 
@@ -345,7 +345,7 @@
 			var stbrnch = document.getElementById("stbrnch"+id).textContent;
 			var stsem = document.getElementById("stsem"+id).textContent;
 			var stnatleave = document.getElementById("stnatleave"+id).textContent;
-			var stpurpose = document.getElementById("stpurpose"+id).textContent;
+			var stpurpose = document.getElementById("stpurposeCopy"+id).textContent;
 			var stshedornt = document.getElementById("stshedornt"+id).textContent;
 			var addr = document.getElementById("addrCopy"+id).textContent;
 			// console.log(addr);
@@ -422,6 +422,7 @@
 							$('<td id="stsem'+item.id+'">').text(item.semester),
 							$('<td id="stnatleave'+item.id+'">').text(item.natureOfLeave),
 							$('<td id="stpurpose'+item.id+'">').text(purpose),
+							$('<td id="stpurposeCopy'+item.id+'" style="display:none">').text(item.purpose),
 							$('<td id="stshedornt'+item.id+'">').text(item.classScheduledOnLeave.toUpperCase()),
 							$('<td style="display: none" id="ststrtdat'+item.id+'">').text(item.startDate.toUpperCase()),
 							$('<td style="display: none" id="stenddat'+item.id+'">').text(item.endDate.toUpperCase()),
