@@ -3,6 +3,6 @@ session_start();
 unset($_SESSION['loggedin']);
 session_destroy();
 
-header("Location: ../adminlogin.php");
+header("Location: ../adminLogin.php");
 exit();
 ?>

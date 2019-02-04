@@ -90,7 +90,7 @@
 			
 				$validextensions = array("jpeg", "jpg", "png"); 
 				$ext = explode('.', basename($_FILES['file']['name'][$i]));
-				$file_extension = end($ext);
+				 $file_extension = strtolower(end($ext));
 				$target_path = "../uploads/"; 
 				$newname="";
 				$newname= md5(uniqid()) . "." . $ext[count($ext) - 1];

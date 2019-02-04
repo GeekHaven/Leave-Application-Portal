@@ -683,6 +683,10 @@ if(!isset($_SESSION['loggedin'])){
 						for(var i=1;i<str.length;i++){
                                 uplo+="<a href='./uploads/"+str[i]+"'>"+i+" "+"</a>"
 						}
+						
+						if (!uplo.replace(/\s/g, '').length) {
+                                uplo="<p>No uploads</p>";
+                        }
 						var address = item.address.substring(0,30);
 						address = address.length>=30?address.concat("..."):address;
 						var purpose = item.purpose.substring(0,30);
