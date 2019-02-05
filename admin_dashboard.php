@@ -170,6 +170,7 @@ if(!isset($_SESSION['loggedin'])){
 	</div>
 	<ul style="padding: 10px; margin-top: 20px">
 		<br>
+		
 	<div class="button-fix">
 		<button><li class="btn all_apps" >ALL</li></button>
 		
@@ -191,10 +192,14 @@ if(!isset($_SESSION['loggedin'])){
 	</div>
 	
 	</ul>
-	
+ 
+ 
+     
 	<div>
 		<h3 id="navdars" style="text-align: center;float: right;margin-right: 40px;margin-bottom: 50px;border-bottom: 2px solid cornflowerblue;background: #00ffaf;padding: 5px;border-radius: 5px;">ALL APPLICATIONS</h3>
+ 
 		<div style="padding-left: 20px;width: 83%;margin-left: 250px;padding-right: 20px">
+		
 			<table id="records_table" class="table-responsive" style="box-shadow: box-shadow: 0 -3px 50px 0 rgba(0, 0, 0, 0.19), 0px 2px 16px 0 rgba(0, 0, 0, 0.24);">
 				<thead>
 				<tr>
@@ -212,11 +217,18 @@ if(!isset($_SESSION['loggedin'])){
 					<th style="padding: 10px">Status</th>
 				</tr>
 				</thead>
+				
 				<tbody>
 				<!-- tr -->
+		
+			  
 				</tbody>
 			</table>
+			<div id="noapp" class="alert alert-danger" style="text-align:center; margin:10px 10px; display:none; role="alert">
+         <strong>No </strong> applications here
+</div>
 		</div>
+	
 		<div id="myModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 
@@ -227,6 +239,7 @@ if(!isset($_SESSION['loggedin'])){
 				</div>
 				<div class="modal-body">
 				<div class="container">
+				
 					<div class="form-horizontal">
 						<!--<div class="form-group">
 						<label class="control-label col-sm-2" for="email">NAME</label>
@@ -326,9 +339,14 @@ if(!isset($_SESSION['loggedin'])){
 				</div>
 
 			</div>
+			
 		</div>
 		</div>
+	
 </body>
+
+		
+	
 <script type="text/javascript" src="js-lib/jq.min.js"></script>
 	<script type="text/javascript">
 
@@ -346,16 +364,24 @@ if(!isset($_SESSION['loggedin'])){
 		        	// if data == 'No applications currently' else //logic ends
 		            // showdirectly
 		            console.log(data);
-					response = $.parseJSON(data);
+					$('#noapp').hide();
 					$('#navdars').html("PENDING APPLICATIONS");
 					$('#navdars').css("background","#ffc400");
 					$("#records_table").find("tr:gt(0)").remove();
+					try { 
+							response = $.parseJSON(data);
+	                   }
+                 catch(err) {
+				     $('#noapp').show();
+					 return;
+				     }
+					 
 				$(function() {
 					$.each(response, function(i, item) {
 						var color = "#222";
 						var tity = "no action";
 						if(item.status == 0) {
-
+          
 						} else if(item.status == 1) {
 							color = "#ff1744";
 							tity = "REJECTED";
@@ -405,10 +431,18 @@ if(!isset($_SESSION['loggedin'])){
 		        	// if data == 'No applications currently' else //logic ends
 		            // showdirectly
 		            console.log(data);
-					response = $.parseJSON(data);
+					$('#noapp').hide();
 					$('#navdars').html("NEW APPLICATIONS");
 					$('#navdars').css("background","#7cbeee");
 					$("#records_table").find("tr:gt(0)").remove();
+					try { 
+							response = $.parseJSON(data);
+	                   }
+                 catch(err) {
+				     $('#noapp').show();
+					 return;
+				     }
+					 
 				$(function() {
 					$.each(response, function(i, item) {
 						var color = "#222";
@@ -464,10 +498,22 @@ if(!isset($_SESSION['loggedin'])){
 		        	// if data == 'No applications currently' else //logic ends
 		            // showdirectly
 		            console.log(data);
-					response = $.parseJSON(data);
+
+                          
+					$('#noapp').hide();
 					$('#navdars').html("ACCEPTED APPLICATIONS");
 					$('#navdars').css("background","#4caf50");
 					$("#records_table").find("tr:gt(0)").remove();
+					
+					try { 
+							response = $.parseJSON(data);
+	                   }
+                 catch(err) {
+				     $('#noapp').show();
+					
+					 return;
+				     }
+
 				$(function() {
 					$.each(response, function(i, item) {
 						var color = "#222";
@@ -523,10 +569,20 @@ if(!isset($_SESSION['loggedin'])){
 		        	// if data == 'No applications currently' else //logic ends
 		            // showdirectly
 		            console.log(data);
-					response = $.parseJSON(data);
+					$('#noapp').hide();
+					
 					$('#navdars').html("REJECTED APPLICATIONS");
 					$('#navdars').css("background","#FF1744");
 					$("#records_table").find("tr:gt(0)").remove();
+					try { 
+							response = $.parseJSON(data);
+	                   }
+                 catch(err) {
+				     $('#noapp').show();
+					 return;
+
+				     }
+					 
 				$(function() {
 					$.each(response, function(i, item) {
 						var color = "#222";
@@ -594,7 +650,7 @@ if(!isset($_SESSION['loggedin'])){
 		        type: 'post',
 		        data: {method: 'RejAppsUP',z_id},
 		        success: function(data) {
-		            console.log(data);
+		           console.log(data);
 		        }
 	    	});
 			location.reload();
