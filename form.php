@@ -60,22 +60,49 @@
  
            
             <h2 class="text-center">Apply for Leave</h2>
-            <?php if (isset($_SESSION['error'])){
-echo "<span class='alert alert-danger'>";
-echo $_SESSION['error'];
-echo "</span>";
-    unset($_SESSION['error']);
+
+
+            <div id="snackbar"><?php 
+if (isset($_SESSION['error'])){
+echo $_SESSION['error']; 
+
 }
 
-?>
-   <?php if (isset($_SESSION['success'])){
-echo "<span class='alert alert-success'>";
-echo $_SESSION['success'];
-echo "</span>";
-    unset($_SESSION['success']);
+if (isset($_SESSION['success'])){
+echo $_SESSION['success']; 
+
+
 }
 
+?></div>
+
+
+ 
+<?php if ((isset($_SESSION['error']) || isset($_SESSION['success']))){
+
+
+  echo '<script>function myFunction() {
+
+   var x = document.getElementById("snackbar")
+ 
+ 
+   x.className = "show";
+ 
+  
+   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+ 
+ }
+ myFunction();
+
+ 
+ </script>';
+ 
+ unset($_SESSION['error']);
+ unset($_SESSION['success']);
+ }
 ?>
+
+         
             <div class="row mt-5">
                 <div class="col-md-6">
                     <div class="form-group">
