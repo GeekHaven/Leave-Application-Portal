@@ -165,7 +165,10 @@ echo "</span>";
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Whether classes are scheduled or not during leave</label>
-                        <input type="text" class="form-control" placeholder="YES/NO or yes/no" name="classScheduledOnLeave">
+                        <select name = "classScheduledOnLeave" class="form-control">
+                             <option value = "yes">YES</option>
+                             <option value = "no">NO</option>
+                        </select>
                     </div>
 
 
