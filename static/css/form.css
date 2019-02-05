@@ -103,3 +103,14 @@ b {
   margin-left: -20px;
   margin-bottom: 91px;
 }
+
+#files{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#filediv{
+  height: 100px;
+  width: 100px;
+}

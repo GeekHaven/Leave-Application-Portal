@@ -302,7 +302,7 @@
 							<p type="email" class="form-control" id="ans_mobile"></p>
 						</div>
 						</div>
-<!--
+						<!--
 						<div class="form-group">
 						<label class="control-label col-sm-2" for="email">EMAIL</label>
 						<div class="col-sm-4">
@@ -437,7 +437,7 @@
 					});
 				});
 		        }
-	    	})
+			})
 		});
 	</script>
 </html>
