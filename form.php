@@ -118,7 +118,11 @@ echo $_SESSION['success'];
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Branch</label>
-                        <input type="text" class="form-control" placeholder="ECE/IT or ece/it" name="branch">
+                        
+                        <select name = "branch" class="form-control">
+                             <option value = "IT">IT</option>
+                             <option value = "ECE">ECE</option>
+                        </select>
                     </div>
 
 
