@@ -32,7 +32,7 @@
 
     	# backend check for empty fields
     	if(empty(trim($studentName)) || empty(trim($branch)) || empty(trim($semester)) || empty(trim($startDate)) || empty(trim($endDate)) || empty(trim($natureOfLeave)) || empty(trim($purpose)) || empty(trim($classScheduledOnLeave)) || empty(trim($address)) || empty(trim($mobile)) ) {
-			$_SESSION['error'] ="Pleas fill all the fields";
+			$_SESSION['error'] ="Please fill all the fields";
                    
 		header("location: ../form.php"); 
 		exit();
