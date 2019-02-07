@@ -20,6 +20,7 @@
 
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<style>
 
 		@import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -168,6 +169,11 @@
 			 background-color: #796ed4; /* Green */
 			 color: #796ed4;
 		   }
+
+		   .btn-custom{
+			   box-shadow:initial;
+			   width:initial;
+		   }
 	</style>
 </head>
 <body>
@@ -302,6 +308,22 @@
 							<p type="email" class="form-control" id="ans_mobile"></p>
 						</div>
 						</div>
+
+						<form action="./core/fileAddModal.php" method="post" enctype="multipart/form-data">
+						<div class="form-group">
+						<input id="Application_id" type="hidden" name="file-id" value=""/>
+		   					<label class="control-label col-sm-2" for="email">Attachments</label>
+							<div class="col-sm-4">
+							<div class="file-field input-field">
+								<div id="files" style="margin-bottom: 8px;">
+									<div id="filediv"><input name="file[]" type="file" id="file"/></div>
+								</div>
+								<a id="add_more" class="btn-sm btn-info mt-4" ><i class="fas fa-plus"></i>Add</a>
+								<button type="submit" class="btn-sm btn-success btn-custom"><i class="fas fa-check-circle"></i>Submit</button>
+							</div>
+							</div>
+						</div>
+						</form>
 						<!--
 						<div class="form-group">
 						<label class="control-label col-sm-2" for="email">EMAIL</label>
@@ -439,5 +461,47 @@
 		        }
 			})
 		});
+
+		// Add More Files		
+$(document).ready(function() {
+
+$('#add_more').click(function() {
+	var div_files = '<div id="filediv"><input name="file[]" type="file" id="file"></div>'
+	$('#files').append(div_files).fadeIn('slow');
+});
+
+
+$('body').on('change', '#file', function(){
+		if (this.files && this.files[0]) {
+			abc += 1; 
+			
+			var z = abc - 1;
+			var x = $(this).parent().find('#previewimg' + z).remove();
+			$(this).before("<div id='abcd"+ abc +"' class='abcd'><img id='previewimg" + abc + "' src=''/></div>");
+		
+			var reader = new FileReader();
+			reader.onload = imageIsLoaded;
+			reader.readAsDataURL(this.files[0]);
+			
+			$(this).hide();
+			$("#abcd"+ abc).append($("<img/>", {id: 'img1', src: './x.png', alt: 'delete'}).click(function() {
+			$(this).parent().parent().remove();
+			}));
+		}
+	});
+
+	function imageIsLoaded(e) {
+		$('#previewimg' + abc).attr('src', e.target.result);
+	};
+
+	$('#upload').click(function(e) {
+		var name = $(":file").val();
+		if (!name)
+		{
+			alert("First Image Must Be Selected");
+			e.preventDefault();
+		}
+	});
+	});
 	</script>
 </html>
