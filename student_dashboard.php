@@ -99,6 +99,7 @@
 			overflow: hidden;
 			width: 100%;
 			margin: 0 auto;
+			position:relative;
 		}
 
 		table thead tr {
@@ -174,6 +175,36 @@
 			   box-shadow:initial;
 			   width:initial;
 		   }
+
+		   @keyframes spinner-spin {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		.spinner {
+			display: flex;
+			justify-content:center;
+			align-items:center;
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			border: 4px solid rgba(0, 0, 0, 0.1);
+			border-left-color: #474787;
+			border-radius: 50%;
+			animation: spinner-spin 1.2s linear infinite;
+			margin-top: 10%;
+			display:block;
+		}
+
+		.tr-none{
+			display:none;
+		}
 	</style>
 </head>
 <body>
@@ -216,6 +247,7 @@
 				</tr>
 				</thead>
 				<tbody>
+				<tr id="loader" class="spinner"></tr>
 				<!-- tr -->
 				</tbody>
 			</table>
@@ -402,6 +434,14 @@
 		        	// check for no application
 		        	// if data == 'No applications currently' else //logic ends
 		            // showdirectly
+
+					setTimeout(() => {
+						$('tr').removeClass('tr-none')
+      					$('#loader').removeClass('spinner');
+						$('#loader').css({
+							"display":"none"
+						});
+    					}, 4000);
 		            console.log(data);
 					response = $.parseJSON(data);
 
@@ -437,7 +477,7 @@
 						address = address.length>=30?address.concat("..."):address;
 						var purpose = item.purpose.substring(0,30);
 						purpose = purpose.length>=30?purpose.concat("..."):purpose;
-						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" style="opacity:'+opacit+'" class="row-data" data-toggle="modal" data-target="#myModal">').append(
+						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" style="opacity:'+opacit+'" class="row-data tr-none" data-toggle="modal" data-target="#myModal">').append(
 							$('<td style="padding-left: 10px;padding-right: 10px" id="stname'+item.id+'">').text(item.studentName),
 							$('<td id="stroll'+item.id+'">').text(item.rollNumber.toUpperCase()),
 							$('<td id="stbrnch'+item.id+'">').text(item.branch.toUpperCase()),

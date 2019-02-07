@@ -87,6 +87,7 @@ if(!isset($_SESSION['loggedin'])){
 			overflow: hidden;
 			width: 100%;
 			margin: 0 auto;
+			position:relative;
 		}
 
 		table thead tr {
@@ -159,6 +160,36 @@ if(!isset($_SESSION['loggedin'])){
 		margin:5px 0px;
 
 	  }
+
+	  @keyframes spinner-spin {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		.spinner {
+			display: flex;
+			justify-content:center;
+			align-items:center;
+			width: 80px;
+			height: 80px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			border: 4px solid rgba(0, 0, 0, 0.1);
+			border-left-color: #474787;
+			border-radius: 50%;
+			animation: spinner-spin 1.2s linear infinite;
+			margin-top: 10%;
+			display:block;
+		}
+
+		.tr-none{
+			display:none;
+		}
 		
 	</style>
 </head>
@@ -219,12 +250,11 @@ if(!isset($_SESSION['loggedin'])){
 				</thead>
 				
 				<tbody>
-				<!-- tr -->
-		
-			  
+				<tr id="loader" class="spinner"></tr>
+					<!-- tr -->	  
 				</tbody>
 			</table>
-			<div id="noapp" class="alert alert-danger" style="text-align:center; margin:10px 10px; display:none; role="alert">
+			<div id="noapp" class="alert alert-danger" style="text-align:center; margin:10px 10px; display:none;" role="alert">
          <strong>No </strong> applications here
 </div>
 		</div>
@@ -363,6 +393,14 @@ if(!isset($_SESSION['loggedin'])){
 		        	// check for no application
 		        	// if data == 'No applications currently' else //logic ends
 		            // showdirectly
+					setTimeout(() => {
+						$('tr').removeClass('tr-none')
+      					$('#loader').removeClass('spinner');
+						$('#loader').css({
+							"display":"none"
+						});
+    					}, 4000);
+
 		            console.log(data);
 					$('#noapp').hide();
 					$('#navdars').html("PENDING APPLICATIONS");
@@ -407,7 +445,7 @@ if(!isset($_SESSION['loggedin'])){
 						address = address.length>=30?address.concat("..."):address;
 						var purpose = item.purpose.substring(0,30);
 						purpose = purpose.length>=30?purpose.concat("..."):purpose;
-						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" class="row-data" data-toggle="modal" data-target="#myModal">').append(
+						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" class="row-data tr-none" data-toggle="modal" data-target="#myModal">').append(
 							$('<td id="stname'+item.id+'">').text(item.studentName),
 							$('<td id="stroll'+item.id+'">').text(item.rollNumber.toUpperCase()),
 							$('<td id="stbrnch'+item.id+'">').text(item.branch.toUpperCase()),
@@ -441,6 +479,14 @@ if(!isset($_SESSION['loggedin'])){
 		        	// check for no application
 		        	// if data == 'No applications currently' else //logic ends
 		            // showdirectly
+
+					setTimeout(() => {
+						$('tr').removeClass('tr-none')
+      					$('#loader').removeClass('spinner');
+						$('#loader').css({
+							"display":"none"
+						});
+    					}, 4000);
 		            console.log(data);
 					$('#noapp').hide();
 					$('#navdars').html("NEW APPLICATIONS");
@@ -485,7 +531,7 @@ if(!isset($_SESSION['loggedin'])){
 						address = address.length>=30?address.concat("..."):address;
 						var purpose = item.purpose.substring(0,30);
 						purpose = purpose.length>=30?purpose.concat("..."):purpose;
-						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" class="row-data" data-toggle="modal" data-target="#myModal">').append(
+						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" class="row-data tr-none" data-toggle="modal" data-target="#myModal">').append(
 							$('<td id="stname'+item.id+'">').text(item.studentName),
 							$('<td id="stroll'+item.id+'">').text(item.rollNumber.toUpperCase()),
 							$('<td id="stbrnch'+item.id+'">').text(item.branch.toUpperCase()),
@@ -519,6 +565,14 @@ if(!isset($_SESSION['loggedin'])){
 		        	// check for no application
 		        	// if data == 'No applications currently' else //logic ends
 		            // showdirectly
+
+					setTimeout(() => {
+						$('tr').removeClass('tr-none')
+      					$('#loader').removeClass('spinner');
+						$('#loader').css({
+							"display":"none"
+						});
+    					}, 4000);
 		            console.log(data);
 
                           
@@ -567,7 +621,7 @@ if(!isset($_SESSION['loggedin'])){
 						address = address.length>=30?address.concat("..."):address;
 						var purpose = item.purpose.substring(0,30);
 						purpose = purpose.length>=30?purpose.concat("..."):purpose;
-						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" class="row-data" data-toggle="modal" data-target="#myModal">').append(
+						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" class="row-data tr-none" data-toggle="modal" data-target="#myModal">').append(
 							$('<td id="stname'+item.id+'">').text(item.studentName),
 							$('<td id="stroll'+item.id+'">').text(item.rollNumber.toUpperCase()),
 							$('<td id="stbrnch'+item.id+'">').text(item.branch.toUpperCase()),
@@ -601,6 +655,14 @@ if(!isset($_SESSION['loggedin'])){
 		        	// check for no application
 		        	// if data == 'No applications currently' else //logic ends
 		            // showdirectly
+
+					setTimeout(() => {
+						$('tr').removeClass('tr-none')
+      					$('#loader').removeClass('spinner');
+						$('#loader').css({
+							"display":"none"
+						});
+    					}, 4000);
 		            console.log(data);
 					$('#noapp').hide();
 					
@@ -648,7 +710,7 @@ if(!isset($_SESSION['loggedin'])){
 						address = address.length>=30?address.concat("..."):address;
 						var purpose = item.purpose.substring(0,30);
 						purpose = purpose.length>=30?purpose.concat("..."):purpose;
-						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" class="row-data" data-toggle="modal" data-target="#myModal">').append(
+						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" class="row-data tr-none" data-toggle="modal" data-target="#myModal">').append(
 							$('<td id="stname'+item.id+'">').text(item.studentName),
 							$('<td id="stroll'+item.id+'">').text(item.rollNumber.toUpperCase()),
 							$('<td id="stbrnch'+item.id+'">').text(item.branch.toUpperCase()),
@@ -761,6 +823,14 @@ if(!isset($_SESSION['loggedin'])){
 		        	// check for no application
 		        	// if data == 'No applications currently' else //logic ends
 		            // showdirectly
+
+					setTimeout(() => {
+						$('tr').removeClass('tr-none')
+      					$('#loader').removeClass('spinner');
+						$('#loader').css({
+							"display":"none"
+						});
+    					}, 4000);
 		            console.log(data);
 					response = $.parseJSON(data);
 
@@ -797,7 +867,7 @@ if(!isset($_SESSION['loggedin'])){
 						address = address.length>=30?address.concat("..."):address;
 						var purpose = item.purpose.substring(0,30);
 						purpose = purpose.length>=30?purpose.concat("..."):purpose;
-						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" style="opacity:'+opacit+'" class="row-data" data-toggle="modal" data-target="#myModal">').append(
+						var $tr = $('<tr id="row-data" onclick="ShowDet('+item.id+')" style="opacity:'+opacit+'" class="row-data tr-none" data-toggle="modal" data-target="#myModal">').append(
 							$('<td style="padding-left: 10px;padding-right: 10px" id="stname'+item.id+'">').text(item.studentName),
 							$('<td id="stroll'+item.id+'">').text(item.rollNumber.toUpperCase()),
 							$('<td id="stbrnch'+item.id+'">').text(item.branch.toUpperCase()),
