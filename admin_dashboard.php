@@ -385,6 +385,11 @@ if(!isset($_SESSION['loggedin'])){
 		});
 
 		$(document).on('click','.pen_apps',function() {
+			$('#loader').addClass('spinner');
+			$('#row-data').addClass('tr-none')
+			$('#loader').css({
+							"display":"block"
+			});
 			$.ajax({
 		        url: './core/admin-dashboard-fetch.php',
 		        type: 'post',
@@ -405,7 +410,7 @@ if(!isset($_SESSION['loggedin'])){
 					$('#noapp').hide();
 					$('#navdars').html("PENDING APPLICATIONS");
 					$('#navdars').css("background","#ffc400");
-					$("#records_table").find("tr:gt(0)").remove();
+					$("#records_table").find("tr:gt(1)").remove();
 					try { 
 							response = $.parseJSON(data);
 	                   }
@@ -471,6 +476,11 @@ if(!isset($_SESSION['loggedin'])){
 		});
 		
 		$(document).on('click','.new_apps',function() {
+			$('#loader').addClass('spinner');
+			$('#row-data').addClass('tr-none')
+			$('#loader').css({
+							"display":"block"
+			});
 			$.ajax({
 		        url: './core/admin-dashboard-fetch.php',
 		        type: 'post',
@@ -491,7 +501,7 @@ if(!isset($_SESSION['loggedin'])){
 					$('#noapp').hide();
 					$('#navdars').html("NEW APPLICATIONS");
 					$('#navdars').css("background","#7cbeee");
-					$("#records_table").find("tr:gt(0)").remove();
+					$("#records_table").find("tr:gt(1)").remove();
 					try { 
 							response = $.parseJSON(data);
 	                   }
@@ -557,6 +567,11 @@ if(!isset($_SESSION['loggedin'])){
 		});
 
 		$(document).on('click','.acc_apps',function() {
+			$('#loader').addClass('spinner');
+			$('#row-data').addClass('tr-none')
+			$('#loader').css({
+							"display":"block"
+			});
 			$.ajax({
 		        url: './core/admin-dashboard-fetch.php',
 		        type: 'post',
@@ -579,7 +594,7 @@ if(!isset($_SESSION['loggedin'])){
 					$('#noapp').hide();
 					$('#navdars').html("ACCEPTED APPLICATIONS");
 					$('#navdars').css("background","#4caf50");
-					$("#records_table").find("tr:gt(0)").remove();
+					$("#records_table").find("tr:gt(1)").remove();
 					
 					try { 
 							response = $.parseJSON(data);
@@ -647,6 +662,11 @@ if(!isset($_SESSION['loggedin'])){
 		});
 
 		$(document).on('click','.rej_apps',function() {
+			$('#loader').addClass('spinner');
+			$('#row-data').addClass('tr-none')
+			$('#loader').css({
+							"display":"block"
+			});
 			$.ajax({
 		        url: './core/admin-dashboard-fetch.php',
 		        type: 'post',
@@ -668,7 +688,7 @@ if(!isset($_SESSION['loggedin'])){
 					
 					$('#navdars').html("REJECTED APPLICATIONS");
 					$('#navdars').css("background","#FF1744");
-					$("#records_table").find("tr:gt(0)").remove();
+					$("#records_table").find("tr:gt(1)").remove();
 					try { 
 							response = $.parseJSON(data);
 	                   }
