@@ -35,9 +35,10 @@
 
 
     		else{		    
-              
+				$name = $user['Name'];
 				$_SESSION['user'] = $email;
 				$_SESSION['branch']=$_POST['branch'];
+				$_SESSION['Name']=$name;
 				$_SESSION['loggedin'] =true;
 			//	$_SESSION['admin'] =true;
                   header("location: ../admin_dashboard.php"); 

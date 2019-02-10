@@ -198,6 +198,7 @@ if(!isset($_SESSION['loggedin'])){
 	<div style="height: 220px;width: 100%;padding: 10px;">
 	<div style="background: url('peoM.jpg');height: inherit;width: inherit;background-size: cover;border-radius: 100% ">
 	</div>
+	<div style="text-align:center;font-size: 24px;color: #fff" class="text-capitalize"><?php echo $_SESSION['Name'] ?></div>
 	</div>
 	<ul style="padding: 10px; margin-top: 20px">
 		<br>
